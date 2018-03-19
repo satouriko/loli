@@ -12,7 +12,17 @@ rub)
     git push -f
     ;;
 hug)
-    git fetch && git reset --hard HEAD
+    if [ ! -n "$2" ];then
+        remote='origin'
+    else
+        remote=$2
+    fi
+    if [ ! -n "$3" ];then
+        branch='master'
+    else
+        branch=$3
+    fi
+    git fetch && git reset --hard $remote/$branch
     ;;
 lift)
     git add .
@@ -21,6 +31,6 @@ touch)
     git commit --amend
     ;;
 *)
-    git $*
+    git $@
     ;;
 esac

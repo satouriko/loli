@@ -22,7 +22,7 @@ Here are some convenient shortcuts. Feel free to contribute by Issue and Pull Re
 | loli lift | git add . |
 | loli touch | git commit --amend |
 | loli rub | git push -f |
-| loli hug | git fetch && git reset --hard HEAD |
+| loli hug | git fetch && git reset --hard origin/master |
 
 You can also use it simply like an alias to git.
 
