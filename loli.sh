@@ -31,6 +31,6 @@ touch)
     git commit --amend
     ;;
 *)
-    git $@
+    git "$@"
     ;;
 esac
