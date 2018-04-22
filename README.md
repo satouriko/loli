@@ -1,5 +1,7 @@
 # loli
 
+![](https://img.shields.io/badge/dynamic/json.svg?label=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Frikakomoe%2Floli%2Fmaster%2Fversion.json&query=%24.version&colorB=de698c)
+
 ```
 萝莉有三好——声娇体软易推倒
 ```
