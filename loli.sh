@@ -22,13 +22,17 @@ hug)
     else
         branch=$3
     fi
-    git fetch && git reset --hard $remote/$branch
+    git fetch $remote && git reset --hard $remote/$branch
     ;;
 lift)
     git add .
     ;;
 touch)
     git commit --amend
+    ;;
+bath)
+    sudo wget -O /usr/bin/loli https://raw.githubusercontent.com/rikakomoe/loli/master/loli.sh
+    sudo chmod +x /usr/bin/loli
     ;;
 *)
     git "$@"
