@@ -28,7 +28,10 @@ lift)
     git add .
     ;;
 touch)
-    git commit --amend
+    git commit --amend -s
+    ;;
+commit)
+    git "$@" -s
     ;;
 bath)
     sudo wget -O /usr/bin/loli https://raw.githubusercontent.com/rikakomoe/loli/master/loli.sh
