@@ -14,21 +14,33 @@ sudo chmod +x /usr/bin/loli
 ```
 
 ## Usage
+```
+usage: loli [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
 
-Here are some convenient shortcuts. Feel free to contribute by Issue and Pull Request if you come up with anything useful and interesting.
+These are common loli commands used in various situations:
 
-| loli | git |
-| --- | --- |
-| loli lift | git add . |
-| loli touch | git commit --amend |
-| loli rub | git push -f |
-| loli hug | git fetch && git reset --hard origin/master |
+blessed with loli
+   chira                        Check if there is an update
+   bath                         Update loli
+   help                         Show loli help
+   
+working with loli
+   lift                         git add .
+   commit [<args>]              git commit $args -s (loli commits with signature automatically)
+   touch                        git commit --amend -s
+   rub [<args>]                 git push -f $args
+   hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
+   
+using loli like git
+   push [<args>]                git push $args
+   pull [<args>]                git pull $args
+   <whatever-else-command>      git $as-it
+```
 
-You can also use it simply like an alias to git.
+## Contribute
 
-| loli | git |
-| --- | --- |
-| loli push | git push |
-| loli pull | git pull |
-| loli commit | git commit |
-
+Feel free to contribute by Issue and Pull Request if you come up with anything convenient and interesting.
