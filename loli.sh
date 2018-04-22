@@ -56,7 +56,7 @@ chira)
             loli bath
         fi
     else
-        echo "Your loli's name is $version"
+        echo "Your loli's name is $version."
         echo "She remains as the youngest loli till now."
     fi
     ;;
