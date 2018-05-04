@@ -36,6 +36,7 @@ working with loli
    touch                        git commit --amend -s
    rub [<args>]                 git push -f $args
    hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
+   forget [<args>]              git update-index --assume-unchanged $args
    
 using loli like git
    push [<args>]                git push $args

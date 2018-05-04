@@ -7,7 +7,7 @@
 # Created Time: Thu 15 Mar 2018 04:01:19 PM CST
 #########################################################################
 
-version='Anju'
+version='Aya'
 
 case $1 in
 version | -v | --version)
@@ -33,6 +33,7 @@ working with loli
    touch                        git commit --amend -s
    rub [<args>]                 git push -f $args
    hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
+   forget [<args>]              git update-index --assume-unchanged $args
    
 using loli like git
    push [<args>]                git push $args
@@ -61,13 +62,8 @@ chira)
     fi
     ;;
 rub)
-    if [ ! -n "$3" ];then
-        git push -f $2 $3
-    elif [ ! -n "$2" ];then
-        git push -f $2
-    else
-        git push -f
-    fi
+    shift
+    git push -f "$@"
     ;;
 hug)
     if [ ! -n "$2" ];then
@@ -89,7 +85,12 @@ touch)
     git commit --amend -s
     ;;
 commit)
-    git "$@" -s
+    shift
+    git commit "$@" -s
+    ;;
+forget)
+    shift
+    git update-index --assume-unchanged "$@"
     ;;
 *)
     git "$@"
