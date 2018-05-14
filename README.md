@@ -33,7 +33,7 @@ blessed with loli
 working with loli
    lift                         git add .
    commit [<args>]              git commit $args -s (loli commits with signature automatically)
-   touch                        git commit --amend -s
+   touch                        git commit --amend --date=now -s
    rub [<args>]                 git push -f $args
    hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
    forget [<args>]              git update-index --assume-unchanged $args

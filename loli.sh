@@ -7,7 +7,7 @@
 # Created Time: Thu 15 Mar 2018 04:01:19 PM CST
 #########################################################################
 
-version='Aya'
+version='Chika'
 
 case $1 in
 version | -v | --version)
@@ -30,7 +30,7 @@ blessed with loli
 working with loli
    lift                         git add .
    commit [<args>]              git commit $args -s (loli commits with signature automatically)
-   touch                        git commit --amend -s
+   touch                        git commit --amend --date=now -s
    rub [<args>]                 git push -f $args
    hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
    forget [<args>]              git update-index --assume-unchanged $args
@@ -82,7 +82,7 @@ lift)
     git add .
     ;;
 touch)
-    git commit --amend -s
+    git commit --amend --date=now -s
     ;;
 commit)
     shift
