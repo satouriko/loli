@@ -4,6 +4,8 @@
 
 Leave that stupid git alone and embrace a cute loli.
 
+<p align="center"><img src="./loli.gif" width="215px" height="215px" /></p>
+
 ## Adopt a loli
 
 > 变态们快离本萌远一点。
@@ -22,6 +24,8 @@ Make sure that by checking from time to time.
 ```bash
 loli chira
 ```
+
+<p align="center"><img src="./chira.png" /></p>
 
 For a more detailed usage, don't hesitate to ask for help.
 
