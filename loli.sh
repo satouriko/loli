@@ -7,7 +7,7 @@
 # Created Time: Thu 15 Mar 2018 04:01:19 PM CST
 #########################################################################
 
-version='Chino'
+version='Cocoa'
 
 case $1 in
 version | -v | --version)
@@ -29,13 +29,16 @@ blessed with loli
    
 working with loli
    lift                         git add .
-   commit [<args>]              git commit $args (loli commits with signature automatically)
    touch                        git commit --amend --date=now
+   stroke                       loli touch --no-edit
    rub [<args>]                 git push -f $args
-   hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch (origin/master as default)
+   suck                         loli lift && loli stroke && loli rub
+   hug [<remote>] [<branch>]    git fetch $remote && git reset --hard $remote/$branch
+   kiss                         git clean -fd
    forget [<args>]              git update-index --assume-unchanged $args
    
 using loli like git
+   commit [<args>]              git commit $args
    push [<args>]                git push $args
    pull [<args>]                git pull $args
    <whatever-else-command>      git $as-it
@@ -44,6 +47,7 @@ using loli like git
 bath)
     sudo wget -O /usr/bin/loli https://raw.githubusercontent.com/rikakomoe/loli/master/loli.sh
     sudo chmod +x /usr/bin/loli
+    exit 0
     ;;
 chira)
     latest=`curl https://raw.githubusercontent.com/rikakomoe/loli/master/version.txt`
@@ -66,23 +70,38 @@ rub)
     git push -f "$@"
     ;;
 hug)
-    if [ ! -n "$2" ];then
-        remote='origin'
-    else
+    branch=`git rev-parse --abbrev-ref HEAD`
+    if [ -n "$2" ];then
         remote=$2
-    fi
-    if [ ! -n "$3" ];then
-        branch='master'
+        if [ -n "$3" ];then
+            branch=$3
+        fi
+        upstream="$remote/$branch"
     else
-        branch=$3
+        remote=`git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD)`
+        upstream='@{u}'
     fi
-    git fetch $remote && git reset --hard $remote/$branch
+    git fetch $remote && git reset --hard $upstream
+    ;;
+kiss)
+    shift
+    git clean -fd "$@"
     ;;
 lift)
-    git add .
+    shift
+    git add . "$@"
     ;;
 touch)
-    git commit --amend --date=now
+    shift
+    git commit --amend --date=now "$@"
+    ;;
+stroke)
+    shift
+    loli touch --no-edit "$@"
+    ;;
+suck)
+    shift
+    loli lift && loli stroke && loli rub "$@"
     ;;
 commit)
     shift
